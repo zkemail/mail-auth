@@ -244,7 +244,7 @@ impl Resolver {
 impl<'x> AuthenticatedMessage<'x> {
     // Function inserted by yush
     // Excerpted and edited from verify_dkim_
-    pub async fn get_canonicalized_header(&self) -> Result<Vec<u8>, Error> {
+    pub fn get_canonicalized_header(&self) -> Result<Vec<u8>, Error> {
         // Validate DKIM headers
         let mut data = Vec::with_capacity(256);
         for header in &self.dkim_headers {
